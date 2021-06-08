@@ -1,0 +1,326 @@
+@font-face {
+    font-family: "LovelyHome";
+    src: url("../font/LovelyHome.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+
+.header {
+    min-height:  56px;
+    transition: min-height 0.3s;
+    background-color: #caf7e3;
+}
+
+.header_inner {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar a.brand {
+    font-family: "LovelyHome";
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #000;
+}
+
+.header_menu {
+    font-size: 32px;
+    margin: 10px auto;
+    display: block;
+    width: 30px;
+}
+
+
+/* Nav */
+
+.navbar {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.navbar_list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: block;
+    background-color: #e7e7de;
+}
+
+.navbar_center {
+    padding: 5px;
+    margin: 5px;
+}
+
+.navbar_item{
+    box-sizing: border-box;
+    display: inline;
+    width: 24%;
+    text-align: center;
+    line-height: 24px;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.navbar_item a {
+    display: inline-block;
+    padding: 1.3em;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #616161;
+}
+  
+.navbar a:hover {
+    background: #ddd;
+    color: rgb(82, 80, 80);
+}
+
+
+main {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f6dfeb; 
+}
+
+/* Skip to Content */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+ }
+  
+ .skip-link:focus {
+    top: 0;
+ }
+
+
+/* Jumbotron */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    width: 100%;
+    text-align: center;
+    background-image: url("/src/public/images/heros/hero-image_3.jpg");
+    background-position: center;
+    background-color: #edffec;
+}
+
+.hero_inner {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.hero_title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+/* Content */
+section h2 {
+    text-align: center;
+    
+}
+
+.content{
+    padding: 40px;
+}
+
+.latest {
+    width: 100%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.gallerys {
+    margin: 5px auto auto;
+    text-align: left;
+}
+
+.gallery-item {
+    margin: 10px 0;
+    box-shadow: 0 8px 16px 0 rgba(14, 13, 13, 0.2);
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background-color: #74c7b8;
+}
+
+.gallery-item_thumbnail {
+    width: 100%;
+}
+
+.gallery-item_description {
+    margin-top: 16px;
+    font-size: 25px;
+    line-height: 1.5em;
+
+}
+
+.gallery-item_description p{
+    font-size: 20px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.rating{
+   color: #fdb827;
+}
+
+.display-topleft{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.display-topleft p {
+    font-size: 20px;
+    color: #23c203e1;
+}
+
+.hover-opacity:hover {
+    opacity: 0.60;
+}
+.modal {
+    z-index: 3;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+}
+.modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 600px;
+}
+.button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 44px;
+    max-width: 44px;
+}
+.hover-red {
+    color: #fff!important;
+    background-color: #f44336!important;
+}
+.xlarge {
+    font-size:24px!important
+}
+.display-topright {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.animate-zoom {
+    animation: animatezoom 0.6s
+}
+
+
+/*Footer*/
+
+footer {
+    background-color: #fca3cc;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    padding: 14px 16px;
+}
+
+footer p {
+    font-size: 20px;
+}
+
+
+/* Header
+nav {
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+
+.header {
+    overflow: hidden;
+    background-color: #2f5969;
+    padding: 20px 10px;
+}
+
+.header a{
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header a.brand {
+    font-family: "LovelyHome";
+    font-size: 40px;
+    font-weight: bold;
+}
+*/
+
+
+
+
+

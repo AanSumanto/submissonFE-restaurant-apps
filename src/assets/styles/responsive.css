@@ -1,0 +1,129 @@
+.gallerys {
+    display: grid;
+    row-gap: 16px ;     
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 499px) {
+    .navbar {
+        z-index: 10;
+        background-color: #fff;
+        width: 300px;
+        position: absolute;
+
+        -webkit-transform: translate(-300px, 0);
+        transform: translate(-300px, 0);
+
+        transition: transform 0.3s ease;
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0,0);
+    }
+
+    .navbar_item{
+        display: list-item;
+        border-bottom: 1px solid #e0e0e0;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .header_menu {
+        display:none;
+    }
+    .navbar_item{
+        padding: 2px;
+     }
+}
+
+
+@media screen and (min-width:650px) {
+    .gallery-item_description{
+        padding: 16px 32px 32px 32px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #listRestaurant{
+        display : grid;
+        grid-template-columns: 1.5fr 1.5fr;
+        column-gap: 15px;
+        row-gap: 16px;
+    }
+}
+
+@media screen and(min-width: 800px) {
+    .navbar_list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width: 900px){
+    #listRestaurant{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 970px){
+    .navbar_item{
+       padding: 5;
+    }
+}
+
+
+
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+    }
+    
+}
+
+
+/*Responsive Modal */
+
+@keyframes animatezoom {
+    from {
+        transform:scale(0)
+    } 
+    to {
+        transform:scale(1)
+    }
+}            
+@media (max-width:600px) {
+    .modal-content{
+        margin: 0 10px;
+        width: auto!important
+    }
+    .modal{padding-top:30px}
+}
+@media (max-width:768px) {
+    .modal-content {
+        width:500px
+    }
+    .modal {
+        padding-top:50px
+    }
+}
+@media (min-width:993px) {
+    .modal-content {
+        width:900px
+    }
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}        
+
+
+

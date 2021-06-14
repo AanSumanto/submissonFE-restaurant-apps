@@ -1,10 +1,92 @@
-.gallerys {
+ .gallerys {
     display: grid;
     row-gap: 16px ;     
     grid-template-columns: 1fr 1fr;
 }
 
 @media screen and (max-width: 499px) {
+    .app-bar {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .app-bar {
+        grid-template-columns: 1fr auto;
+        padding: 8px 32px;
+        width: 100%;
+    }
+   
+    .app-bar .app-bar_brand h1 {
+        font-size: 1.5em;
+    }
+   
+    .app-bar .app-bar_menu {
+        display: none;
+    }
+   
+    .app-bar .app-bar_navbar {
+        position: static;
+        width: 100%;
+    }
+   
+    .app-bar .app-bar_navbar ul li {
+        display: inline-block;
+    }
+   
+    .app-bar .app-bar_navbar ul li a {
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+        margin: 0;
+    }
+   
+    .movies {
+        grid-template-columns: 1fr 1fr;
+    }
+   
+    .movie {
+        grid-template-columns: auto 1fr;
+    }
+   
+    .movie .movie__title {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+   
+    .movie .movie__overview {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+  }
+   
+  @media screen and (min-width: 800px) {
+    .app-bar .app-bar_brand h1 {
+        font-size: 2em;
+    }
+
+    
+  }
+   
+  @media screen and (min-width: 850px) {
+    .movies {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+   
+  @media screen and (min-width: 1200px) {
+    .movies {
+        grid-template-columns: repeat(4, 1fr);
+    }
+  }
+   
+  @media screen and (min-width: 1600px) {
+    .movies {
+        grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+/* @media screen and (max-width: 499px) {
     .navbar {
         z-index: 10;
         background-color: #fff;
@@ -89,7 +171,7 @@
 }
 
 
-/*Responsive Modal */
+/*Responsive Modal
 
 @keyframes animatezoom {
     from {
@@ -124,6 +206,4 @@
     display: table;
     clear: both;
 }        
-
-
-
+ */

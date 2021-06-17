@@ -12,5 +12,14 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-console": 0,
+        "linebreak-style": "off",
+        "no-unused-expressions": "off",
+        "no-underscore-dangle": "off",
+        "eol-last": "off",
+        "indent": "off",
+        "no-else-return": "off",
+        "import/extensions": "off"
+
     }
 }

@@ -46,9 +46,10 @@ body {
 }
   
 .app-bar .app-bar_brand {
-    display: flex;
+    display: grid;
     align-items: center;
 }
+
   
 .app-bar .app-bar_brand h1 {
     color: #db0000;
@@ -81,10 +82,22 @@ body {
     width: 100%;
 }
 
+/* main */
+
 main {
     padding: 32px;
     flex: 1;
 }
+
+.content {
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+.content .content_heading {
+    font-weight: normal;
+}
+
 
 /* Skip to Content  */
 .skip-link {
@@ -139,7 +152,7 @@ footer {
 }
 
 footer p {
-    font-size: 20px;
+    font-size: 15px;
 }
  
 

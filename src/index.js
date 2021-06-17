@@ -1,24 +1,38 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import './assets/styles/main.css';
 import './assets/styles/responsive.css';
-import itemRestaurant from './scripts/item-restaurant';
+import './scripts/component/search-bar.js';
+import App from './scripts/view/app';
+// import itemRestaurant from './scripts/item-restaurant';
 
-document.addEventListener('DOMContentLoaded', itemRestaurant);
+// document.addEventListener('DOMContentLoaded', itemRestaurant);
 
-const menu = document.querySelector('#menu');
-const hero = document.querySelector('.hero');
-const main = document.querySelector('main');
-const drawer = document.querySelector('#drawer');
-
-menu.addEventListener('click', (e) => {
-  drawer.classList.toggle('open');
-  e.stopPropagation();
+// eslint-disable-next-line no-unused-vars
+const app = new App({
+  button: document.querySelector('#hamburgerButton'),
+  content: document.querySelector('#mainContent'),
+  hero: document.querySelector('.hero'),
+  main: document.querySelector('main'),
+  drawer: document.querySelector('#navbarDrawer'),
 });
 
-hero.addEventListener('click', () => {
-  drawer.classList.remove('open');
+window.addEventListener('hashchange', () => {
+  app.renderPage();
 });
 
-main.addEventListener('click', () => {
-  drawer.classList.remove('open');
+window.addEventListener('load', () => {
+  app.renderPage();
 });
+
+// menu.addEventListener('click', (e) => {
+//   drawer.classList.toggle('open');
+//   e.stopPropagation();
+// });
+
+// hero.addEventListener('click', () => {
+//   drawer.classList.remove('open');
+// });
+
+// main.addEventListener('click', () => {
+//   drawer.classList.remove('open');
+// });

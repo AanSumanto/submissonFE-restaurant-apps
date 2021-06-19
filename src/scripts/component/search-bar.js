@@ -23,28 +23,19 @@ class SearchBar extends HTMLElement {
         this.shadowDOM.innerHTML = `
     <style>
     
-    .search-container {
-        max-width: 250px;
-        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        padding: 5px;
-        border-radius: 5px;
-        display: absolute;
-        position: sticky;
-        top: 10px;
-        background-color: white;
-    }
 
     .search-container > input {
         width: 75%;
         padding: 16px;
         border: 0;
-        border-bottom: 1px solid cornflowerblue;
+        border-bottom: 1px solid black;
         font-weight: bold;
+        background-color: #F7FD04;
     }
 
     .search-container > input:focus {
         outline: 0;
-        border-bottom: 2px solid cornflowerblue;
+        border-bottom: 2px solid black;
     }
 
     .search-container > input:focus::placeholder {
@@ -60,7 +51,7 @@ class SearchBar extends HTMLElement {
         width: 30%;
         cursor: pointer;
         margin-left: auto;
-        padding: 5px;
+        padding: 15px;
         background-color: cornflowerblue;
         color: white;
         border: 0;
@@ -78,6 +69,11 @@ class SearchBar extends HTMLElement {
             margin-bottom: 12px;
         }
 
+        .search-container input::placeholder  {
+            width: 50%;
+            font-size:15px
+        }
+
         .search-container > button {
             width: 100%;
         }
@@ -86,7 +82,7 @@ class SearchBar extends HTMLElement {
     </style>
 
        <div id="search-container" class="search-container">
-           <input placeholder="Favorite Restaurant" id="searchElement" type="search">
+           <input placeholder="Search Favorite Restaurant" id="searchElement" type="search">
            <button id="searchButtonElement" type="submit">Search</button>
        </div>
        `;

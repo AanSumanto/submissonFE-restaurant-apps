@@ -1,11 +1,10 @@
-/* eslint-disable no-else-return */
 import API_ENDPOINT from '../global/api-endpoint';
 
 class RestaurantDbSource {
   static async listRestaurant() {
     const response = await fetch(API_ENDPOINT.LIST_RESTAURANT);
     const responseJSON = await response.json();
-    return responseJSON.result;
+    return responseJSON.restaurants;
   }
 
   static async detailRestaurant(id) {

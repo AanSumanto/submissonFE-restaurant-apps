@@ -6,23 +6,23 @@ const UrlParser = {
   },
 
   parseActiveUrlWithoutCombiner() {
-      const url = window.location.hash.slice(1).toLocaleLowerCase();
+      const url = window.location.hash.slice(1).toLowerCase();
       return this._urlSplitter(url);
   },
 
   _urlSplitter(url) {
-      const urlsSplits = url.split('/');
+      const urlSplits = url.split('/');
       return {
-          resource: urlsSplits[1] || null,
-          id: urlsSplits[2] || null,
-          verb: urlsSplits[3] || null,
+          resource: urlSplits[1] || null,
+          id: urlSplits[2] || null,
+          verb: urlSplits[3] || null,
       };
   },
 
-  _urlCombiner(splitedUrl) {
-      return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
-      + (splitedUrl.id ? '/:id' : '')
-      + (splitedUrl.verb ? `/${splitedUrl.verb}` : '');
+  _urlCombiner(spliteUrl) {
+      return (spliteUrl.resource ? `/${spliteUrl.resource}` : '')
+      + (spliteUrl.id ? '/:id' : '')
+      + (spliteUrl.verb ? `/${spliteUrl.verb}` : '');
   },
 };
 

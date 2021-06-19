@@ -6,12 +6,13 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
   
-body {
+body{
     font-family: 'Merriweather', sans-serif;
-    background-color: white;
-    min-height: 100vh;
+    background-color: #F98404;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -19,12 +20,16 @@ body {
   /*
     AppBar
   */
-  
+
+header .app-bar {
+    grid-template-columns: auto 1fr auto;
+}
+
 .app-bar {
     padding: 8px 16px;
-    background-color: white;
+    background-color: #F7FD04;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto auto;
     gap: 10px;
     position: sticky;
     top: 0;
@@ -50,7 +55,11 @@ body {
     align-items: center;
 }
 
-  
+.app-bar .app-bar_search-bar {
+    display: inline-flex;
+}
+
+
 .app-bar .app-bar_brand h1 {
     color: #db0000;
     font-family: LovelyHome;
@@ -65,7 +74,7 @@ body {
     width: 150px;
     transition: all 0.3s;
     padding: 8px;
-    background-color: white;
+    background-color: #F7FD04;
     overflow: hidden;
 }
   
@@ -76,8 +85,9 @@ body {
 .app-bar .app-bar_navbar ul li a {
     display: inline-block;
     text-decoration: none;
+    align-content: center;
     color: black;
-    padding: 8px;
+    padding: 15px;
     margin-bottom: 5px;
     width: 100%;
 }
@@ -96,6 +106,8 @@ main {
 
 .content .content_heading {
     font-weight: normal;
+    text-align: center;
+
 }
 
 
@@ -118,7 +130,9 @@ main {
 /* Jumbotron */
 
 .hero {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 15px;
     align-items: center;
     min-height: 380px;
     width: 100%;
@@ -139,6 +153,88 @@ main {
     font-size: 36px;
 }
 
+/* Restaurant */
+
+.restaurants {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 32px 0;
+
+}
+
+/* Reataurant  */
+  
+  .restaurant {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px 16px;
+  }
+  
+  .restaurant .restaurant_poster {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .restaurant .restaurant_info h4 {
+    margin: 8px 0;
+  }
+
+/* restaurant Item */
+  
+  .restaurant-item {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .restaurant-item__header {
+    position: relative;
+  }
+  
+  .restaurant-item .restaurant-item_header .restaurant-item_header_poster {
+    width: 100%;
+  }
+  
+  .restaurant-item .restaurant-item_header .restaurant-item_header_rating {
+    position: absolute;
+    padding: 8px;
+    bottom: 20px;
+    left: 0;
+    display: inline-block;
+    background-color: black;
+    color: white;
+  }
+  
+  .restaurant-item .restaurant-item_header .restaurant-item_header_rating .restaurant-item_header_rating_score {
+    margin-left: 10px;
+  }
+  
+  .restaurant-item .restaurant-item_content {
+    padding: 16px;
+    background-color: #F9B208;
+  }
+  
+  .restaurant-item .restaurant-item_content h3 {
+    margin: 0 0 10px 0;
+  }
+  
+  .restaurant-item .restaurant-item_content h3 a {
+    color: #db0000;
+    text-decoration: none;
+  }
+  
+  .restaurant-item .restaurant-item_content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
 
 /* Footer */
 
@@ -148,11 +244,12 @@ footer {
     bottom: 0;
     padding: 14px 16px;
     position: sticky;
-    background-color: white;
+    background-color: #FC5404;
 }
 
 footer p {
     font-size: 15px;
+    color: rgb(156, 7, 7);
 }
  
 
@@ -473,8 +570,3 @@ nav {
     font-weight: bold;
 }
 */
-
-
-
-
-

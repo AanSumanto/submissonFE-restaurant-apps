@@ -165,7 +165,7 @@ main {
 
 /* Reataurant  */
   
-  .restaurant {
+  /* .restaurant {
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
@@ -181,7 +181,7 @@ main {
   
   .restaurant .restaurant_info h4 {
     margin: 8px 0;
-  }
+  } */
 
 /* restaurant Item */
   
@@ -235,6 +235,24 @@ main {
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
   }
+
+
+/* Restaurant Menu */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+            
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+            
+tr:nth-child(even){background-color: #f2f2f2}
+
 
 /* Footer */
 

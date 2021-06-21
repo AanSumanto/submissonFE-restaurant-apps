@@ -1,16 +1,30 @@
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 450px) {
+    .app-bar .app-bar_menu button{
+        padding: 20px;
+    }
+}
+
+
+@media screen and (min-width: 499px) {
     .app-bar {
         width: 100%;
     }
 
     .app-bar .app-bar_brand h1 {
-        font-size: 2.0em;
+        font-size: 15px;
     }
 
     .app-bar .app-bar_menu button{
         padding: 15px;
     }
 }
+
+@media screen and (max-width: 650px) {
+    .app-bar .app-bar_brand h1 {
+        font-size: 35px;
+    }
+}
+
 
 @media screen and (min-width: 650px) {
     .app-bar {

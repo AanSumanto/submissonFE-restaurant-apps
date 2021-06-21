@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
+    "idb": "^6.1.2",
     "regenerator-runtime": "^0.13.5",
     "webpack-dev-server": "^3.11.0"
   }

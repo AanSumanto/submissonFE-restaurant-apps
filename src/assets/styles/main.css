@@ -165,7 +165,7 @@ main {
 
 /* Reataurant  */
   
-  /* .restaurant {
+  .restaurant {
     margin: 0 auto;
     width: 100%;
     max-width: 800px;
@@ -174,14 +174,14 @@ main {
     gap: 18px 16px;
   }
   
-  .restaurant .restaurant_poster {
+  .restaurant_poster {
     width: 100%;
-    max-width: 400px;
+    max-width: 800px;
   }
   
   .restaurant .restaurant_info h4 {
     margin: 8px 0;
-  } */
+  }
 
 /* restaurant Item */
   
@@ -240,10 +240,10 @@ main {
 /* Restaurant Menu */
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 15px;
     width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid #FC5404;
 }
             
 th, td {
@@ -251,7 +251,7 @@ th, td {
     padding: 8px;
 }
             
-tr:nth-child(even){background-color: #f2f2f2}
+tr,td:nth-child(even){background-color: #FC5404}
 
 
 /* Footer */

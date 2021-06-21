@@ -2,35 +2,38 @@ import CONFIG from '../scripts/global/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
 
-    <h2 class="restaurant_name">${restaurant.name}</h2>
-
-    // Button Favorite On here 
-
-    <p>${restaurant.categories[0].name} ${restaurant.categories[1].name}</p>
-    <h4>Address : </h4><p>${restaurant.address} 
-    <h4>City: </h4><p>${restaurant.city}</p>
-    <img class="restaurant_poster" src="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
-    
-    <h4>Description</h4>
-    <p>${restaurant.description}</p>
-
     <div class="restaurant_info">
-    <h3>Information</h3> 
-
-    <div id="restaurant_menu" class"restaurant_menu">
-        <h4>Menu</h4>
-        <h5>Food:  ${restaurant.menus.foods[0].name}</h5>
-        <h5>drinks : ${restaurant.menus.drinks[0].name}</h5>
-    </div>
-
-    <h4>Rating</h4>
-    <p>${restaurant.rating}</p>
-    </div>
-    <div class="restaurant_overview">
-    <h3>Overview</h3>
-    <p>${restaurant.customerReviews[0].name}</p>
-    <p>${restaurant.customerReviews[1].review}</p>
-    <p>${restaurant.customerReviews[2].date}</p>
+        <h2 class="restaurant_name">${restaurant.name}</h2>
+        // Button Favorite On here 
+        <h4>Restaurant Categories : </h4> <p>${restaurant.categories.map((categories) => categories.name)}</p>
+        <h4>Address : </h4><p>${restaurant.address} 
+        <h4>City: ${restaurant.city} </h4>
+        <h4>Rating: ${restaurant.rating} </h4>
+        <img class="restaurant_poster" src="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+        <h4>Description</h4>
+        <p>${restaurant.description}</p>
+        <br>
+        <h3>Menu Information</h3> 
+        <div id="restaurant_menu" class"restaurant_menu">
+            <table>
+                <tr><td>Food</td>
+                    <td>${restaurant.menus.foods.map((food) => food.name)}</td> 
+                </tr>
+                <tr><td>Drink</td>
+                    <td>${restaurant.menus.drinks.map((food) => food.name)}</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+            <h3>Review</h3>
+                ${restaurant.customerReviews.map((review) => `
+                    <div class="restaurant_review">
+                        <h5 tabindex="0">${review.name}</h5>
+                        <p tabindex="0" class"date-review">${review.date}</p>
+                        <p tabindex="0">${review.review}</p>
+                        <br>
+                    </div>
+                `).join('')}
     </div>
 `;
 
@@ -52,4 +55,21 @@ const createRestaurantItemTemplate = (restaurant) => `
   </div>
   `;
 
-export { createRestaurantDetailTemplate, createRestaurantItemTemplate };
+const createFavoriteButtonTemplate = () => `
+    <button aria-label="favorite this restaurant" id="favoriteButton" class="favorite">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </button>
+    `;
+
+const createFavoritedButtonTemplate = () => `
+    <button aria-label="unfavorite this restaurant" id="favoriteButton" class="favorite">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+    </button>
+    `;
+
+export {
+        createRestaurantDetailTemplate,
+        createRestaurantItemTemplate,
+        createFavoriteButtonTemplate,
+        createFavoritedButtonTemplate,
+    };

@@ -40,6 +40,7 @@
     "dotenv": "^10.0.0",
     "idb": "^6.1.2",
     "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1",
     "webpack-dev-server": "^3.11.0"
   }
 }

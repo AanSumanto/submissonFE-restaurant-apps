@@ -13,10 +13,10 @@ const Favorite = {
     },
 
     async afterRender() {
-        const movies = await FavoriteRestaurantIdb.getAllMovies();
-        const moviesContainer = document.querySelector('#movies');
-        movies.forEach((movie) => {
-            moviesContainer.innerHTML += createRestaurantItemTemplate(movie);
+        const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
+        const restaurantContainer = document.querySelector('#restaurants');
+        restaurants.forEach((restaurant) => {
+            restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         });
     },
 };

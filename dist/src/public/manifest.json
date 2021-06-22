@@ -1,56 +1,56 @@
 {
-    "name": "Restaurant Catalogue Lite",
     "short_name": "Restaurant Lite",
+    "name": "Restaurant Catalogue Lite",
     "description": "Free Catalogue Restaurant For You",
-    "start_url": "./index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#F7FD04",
     "icons": [
         {
-            "src": "/icons/favicon-48x48.png",
+            "src": "./icons/favicon-48x48.png",
             "sizes": "48x48",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-57x57.png",
+            "src": "./icons/favicon-57x57.png",
             "sizes": "57x57",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-64x64.png",
+            "src": "./icons/favicon-64x64.png",
             "sizes": "64x64",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-72x72.png",
+            "src": "./icons/favicon-72x72.png",
             "sizes": "72x72",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-114x114.png",
+            "src": "./icons/favicon-114x114.png",
             "sizes": "114x114",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-120x120.png",
+            "src": "./icons/favicon-120x120.png",
             "sizes": "120x120",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-144x144.png",
+            "src": "./icons/favicon-144x144.png",
             "sizes": "144x144",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/icons/favicon-512x512.png",
+            "src": "./icons/favicon-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"

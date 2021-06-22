@@ -18,8 +18,10 @@
         "no-underscore-dangle": "off",
         "eol-last": "off",
         "indent": "off",
+        "no-unused-vars": "off",
         "no-else-return": "off",
-        "import/extensions": "off"
-
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-restricted-globals": "off"
     }
 }

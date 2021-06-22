@@ -2,7 +2,8 @@ import 'regenerator-runtime'; /* for async await transpile */
 import './assets/styles/main.css';
 import './assets/styles/responsive.css';
 import './scripts/component/search-bar.js';
-import App from './scripts/view/app';
+import swRegister from './scripts/utils/sw-register';
+import App from './scripts/view/App';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
@@ -18,17 +19,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
-
-// menu.addEventListener('click', (e) => {
-//   drawer.classList.toggle('open');
-//   e.stopPropagation();
-// });
-
-// hero.addEventListener('click', () => {
-//   drawer.classList.remove('open');
-// });
-
-// main.addEventListener('click', () => {
-//   drawer.classList.remove('open');
-// });

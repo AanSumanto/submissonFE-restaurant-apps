@@ -1,9 +1,12 @@
-// import { createFavoriteButtonTemplate } from "../../templates/template-creator";
+import { createFavoriteButtonTemplate, createFavoritedButtonTemplate } from '../../templates/template-creator';
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 
 const FavoriteButtonInitiator = {
     async init({ favoriteButtonContainer, restaurant }) {
         this._favoriteButtonContainer = favoriteButtonContainer;
         this._restaurant = restaurant;
+
+        await this._renderButton();
     },
 
     async _renderButton() {
@@ -16,19 +19,29 @@ const FavoriteButtonInitiator = {
         }
     },
 
-    // async _isRestaurantExist(id) {
-    //     // idb
-    // },
+    async _isRestaurantExist(id) {
+        const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+        return !!restaurant;
+    },
 
-    // _renderFavorite() {
-    //     this._favoriteButtonContainer.innerHTML = createFavoriteButtonTemplate();
+    _renderFavorite() {
+        this._favoriteButtonContainer.innerHTML = createFavoriteButtonTemplate();
 
-    //     const favoriteButton = document.querySelector('#favoriteButton');
-    //     favoriteButton.addEventListener('click', async () => {
-    //         // idb
-    //     });
-    //     this._renderButton();
-    // },
+        const favoriteButton = document.querySelector('#favoriteButton');
+        favoriteButton.addEventListener('click', async () => {
+            await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
+            this._renderButton();
+        });
+    },
+
+    _renderFavorited() {
+        this._favoriteButtonContainer.innerHTML = createFavoritedButtonTemplate();
+        const favoriteButton = document.querySelector('#favoriteButton');
+        favoriteButton.addEventListener('click', async () => {
+            await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+            this._renderButton();
+        });
+    },
 };
 
 export default FavoriteButtonInitiator;

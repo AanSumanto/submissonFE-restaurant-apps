@@ -5,6 +5,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <div class="restaurant_info">
         <h2 class="restaurant_name">${restaurant.name}</h2>
         // Button Favorite On here 
+        <favorite-button> </favorite-button>
         <h4>Restaurant Categories : </h4> <p>${restaurant.categories.map((categories) => categories.name)}</p>
         <h4>Address : </h4><p>${restaurant.address} 
         <h4>City: ${restaurant.city} </h4>

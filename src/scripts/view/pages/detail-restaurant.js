@@ -1,11 +1,13 @@
-import { createRestaurantDetailTemplate } from '../../../templates/template-creator';
+import { createFavoriteButtonTemplate, createRestaurantDetailTemplate } from '../../../templates/template-creator';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import UrlParser from '../../routes/url-parser';
+import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
 
 const Detail = {
     async render() {
      return `
         <div id="restaurant" class="restaurant"></div>
+        <div id="favoriteButtonContainer" class="favorite"></div>
      `;
     },
 
@@ -14,6 +16,16 @@ const Detail = {
       const restaurant = await RestaurantDbSource.detailRestaurant(url.id);
       const restaurantContainer = document.querySelector('#restaurant');
       restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+
+      FavoriteButtonInitiator.init({
+        favoriteButtonContainer: document.querySelector('#favoriteButtonContainer'),
+        restaurant: {
+          id: restaurant.id,
+          name: restaurant.name,
+          review: restaurant.review,
+          rating: restaurant.rating,
+        },
+  });
     },
 };
 

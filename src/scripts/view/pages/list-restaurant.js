@@ -4,11 +4,11 @@ import RestaurantDbSource from '../../data/restaurantdb-source';
 const ListRestaurant = {
     async render() {
         return `
-        <div class="content">
-            <h2 class="content_heading">Expolorer Restaurant</h2>
-            <div id="restaurants" class="restaurants">
-        </div>
-      </div>
+            <div class="content">
+                <h2 class="content_heading">Expolorer Restaurant</h2>
+                <div id="restaurants" class="restaurants">
+                </div>
+            </div>
         `;
     },
 

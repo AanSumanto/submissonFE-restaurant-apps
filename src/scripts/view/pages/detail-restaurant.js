@@ -1,4 +1,4 @@
-import { createFavoriteButtonTemplate, createRestaurantDetailTemplate } from '../../../templates/template-creator';
+import { createRestaurantDetailTemplate } from '../../../templates/template-creator';
 import RestaurantDbSource from '../../data/restaurantdb-source';
 import UrlParser from '../../routes/url-parser';
 import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
@@ -22,7 +22,9 @@ const Detail = {
         restaurant: {
           id: restaurant.id,
           name: restaurant.name,
-          review: restaurant.review,
+          picturedId: restaurant.picturedId,
+          city: restaurant.city,
+          description: restaurant.description,
           rating: restaurant.rating,
         },
   });

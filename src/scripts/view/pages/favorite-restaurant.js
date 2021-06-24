@@ -1,4 +1,4 @@
-import { createRestaurantItemTemplate } from '../../../templates/template-creator';
+import { createRestaurantItemFavoriteTemplate } from '../../../templates/template-creator';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Favorite = {
@@ -13,10 +13,10 @@ const Favorite = {
     },
 
     async afterRender() {
-        const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
-        const restaurantContainer = document.querySelector('#restaurants');
+        const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+        const restaurantsContainer = document.querySelector('#restaurants');
         restaurants.forEach((restaurant) => {
-            restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+            restaurantsContainer.innerHTML += createRestaurantItemFavoriteTemplate(restaurant);
         });
     },
 };

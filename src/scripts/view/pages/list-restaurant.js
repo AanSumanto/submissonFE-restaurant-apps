@@ -19,6 +19,7 @@ const ListRestaurant = {
             restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
         });
     },
+
 };
 
 export default ListRestaurant;

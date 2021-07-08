@@ -14,17 +14,26 @@ class FavoriteRestaurantSearchPresenter {
     async _searchRestaurants(latestQuery) {
         this._latestQuery = latestQuery.trim();
 
-        const foundRestaurants = await this._favoriteRestaurants
-            .searchRestaurants(this.latestQuery);
-
+        let foundRestaurants;
+        if (this.latestQuery.length > 0) {
+            foundRestaurants = await this._favoriteRestaurants.searchRestaurants(this.latestQuery);
+        } else {
+            foundRestaurants = await this._favoriteRestaurants.getAllRestaurants();
+        }
         this._showFoundRestaurants(foundRestaurants);
     }
 
     _showFoundRestaurants(restaurants) {
-        const html = restaurants.reduce(
-            (carry, restaurant) => carry.concat(`<li class="restaurant"><span class="restaurant_title">${restaurant.title || '-'}</span></li>`),
-            '',
-        );
+        let html;
+
+        if (restaurants.length > 0) {
+            html = restaurants.reduce(
+                (carry, restaurant) => carry.concat(`<li class="restaurant"><span class="restaurant_title">${restaurant.title || '-'}</span></li>`),
+                '',
+            );
+        } else {
+            html = '<div class="restaurant_not_found">Restaurant Tidak ditemukan</div>';
+        }
 
         document.querySelector('.restaurants').innerHTML = html;
 

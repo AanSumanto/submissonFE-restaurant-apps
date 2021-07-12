@@ -11,7 +11,7 @@ Scenario('showing empty favorited restaurants', ({ I }) => {
     I.see('Tidak ada film untuk di tampilkan', '.restaurant-item_not_found');
 });
 
-Scenario('favorite one restaurant', ({ I }) => {
+Scenario('favorite one restaurant', async ({ I }) => {
     I.see('Tidak ada film untuk di tampilkan', '.restaurant-item_not_found');
 
     I.amOnPage('/');
@@ -32,7 +32,7 @@ Scenario('favorite one restaurant', ({ I }) => {
     assert.strictEqual(firstRestaurantName, favoritedRestaurantName);
 });
 
-Scenario('searching restaurants', ({ I }) => {
+Scenario('searching restaurants', async ({ I }) => {
    I.see('Tidak ada restaurant untuk di tampilkan', '.restaurant-item_not_found');
 
    I.amOnPage('/');

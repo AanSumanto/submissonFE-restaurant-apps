@@ -1,9 +1,10 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import './assets/styles/main.css';
 import './assets/styles/responsive.css';
-import './scripts/component/search-bar.js';
 import swRegister from './scripts/utils/sw-register';
 import App from './scripts/view/App';
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

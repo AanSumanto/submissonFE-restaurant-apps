@@ -1,6 +1,6 @@
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
-import FavoriteRestaurantSearchView from '../src/scripts/view/pages/liked-restaurants/favorite-restaurant-search-view';
-import FavoriteRestaurantShowPresenter from '../src/scripts/view/pages/liked-restaurants/favorite-restaurant-show-presenter';
+import FavoriteRestaurantSearchView from '../src/scripts/view/pages/favorited-Restaurants/favorite-restaurant-search-view';
+import FavoriteRestaurantShowPresenter from '../src/scripts/view/pages/favorited-Restaurants/favorite-restaurant-show-presenter';
 
 describe('Showing all favorite restaurants', () => {
     let view;

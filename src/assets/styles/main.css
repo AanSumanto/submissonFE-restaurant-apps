@@ -129,15 +129,23 @@ main {
 
 /* Jumbotron */
 
+picture img{
+  grid-template-columns: auto;
+  padding: 15px;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+}
+
 .hero {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: auto;
     padding: 15px;
     align-items: center;
     min-height: 380px;
     width: 100%;
     text-align: center;
-    background-image: url("/src/public/images/heros/hero-image_3.jpg");
     background-position: center;
     background-color: #edffec;
 }
@@ -148,7 +156,7 @@ main {
 }
 
 .hero_title {
-    color: #fff;
+    color: rgb(12, 4, 4);
     font-weight: 500;
     font-size: 36px;
 }

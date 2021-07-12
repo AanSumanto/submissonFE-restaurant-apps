@@ -1,6 +1,6 @@
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
 import FavoriteRestaurantSearchPresenter from '../src/scripts/view/pages/favorited-Restaurants/favorite-restaurant-search-presenter';
-import FavoriteRestaurantSearchView from '../src/scripts/view/pages/liked-restaurants/favorite-restaurant-search-view';
+import FavoriteRestaurantSearchView from '../src/scripts/view/pages/favorited-Restaurants/favorite-restaurant-search-view';
 
 describe('Searching Restaurants', () => {
     let presenter;
@@ -49,25 +49,17 @@ describe('Searching Restaurants', () => {
             presenter._showFoundRestaurants([{ id: 1 }]);
             expect(document.querySelectorAll('.restaurant-item').length).toEqual(1);
 
-            presenter._showFoundRestaurants([{ id: 1, title: 'Satu' }, { id: 2, title: 'Dua' }]);
+            presenter._showFoundRestaurants([{ id: 1, name: 'Satu' }, { id: 2, name: 'Dua' }]);
             expect(document.querySelectorAll('.restaurant-item').length).toEqual(2);
         });
 
-        it('Should show the title of the found restaurants', () => {
-            presenter._showFoundRestaurants([{ id: 1, title: 'Satu' }]);
+        it('Should show the name of the found restaurants', () => {
+            presenter._showFoundRestaurants([{ id: 1, name: 'Satu' }]);
             expect(document.querySelectorAll('.restaurant_title').item(0).textContent)
                 .toEqual('Satu');
-
-            presenter._showFoundRestaurants(
-                [{ id: 1, title: 'Satu' }, { id: 2, title: 'Dua' }],
-            );
-
-            const restaurantTitles = document.querySelectorAll('.restaurant_title');
-            expect(restaurantTitles.item(0).textContent).toEqual('Satu');
-            expect(restaurantTitles.item(1).textContent).toEqual('Dua');
         });
 
-        it('should show - when the movie returned does not contain a title', (done) => {
+        it('should show - when the restaurant returned does not contain a name', (done) => {
            document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
             const restaurantTitles = document.querySelectorAll('.restaurant_title');
             expect(restaurantTitles.item(0).textContent).toEqual('-');
@@ -111,17 +103,9 @@ describe('Searching Restaurants', () => {
 
     describe('When no favorite restaurant could be found', () => {
         it('Should show the empty message', (done) => {
-            // document.getElementById('restaurant-search-container')
-            // .addEventListener('restaurants:searched:updated', () => {
-            //     expect(document.querySelectorAll('.restaurant_not_found').length)
-            //         .toEqual(1);
-            //     done();
-            // });
-
             document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
-                expect(document.querySelectorAll('.restaurant_not_found').length)
+                expect(document.querySelectorAll('.restaurant-item_not_found').length)
                     .toEqual(1);
-
                     done();
             });
 
@@ -131,8 +115,7 @@ describe('Searching Restaurants', () => {
         });
 
         it('Should not show any restaurant', (done) => {
-            document.getElementById('restaurants')
-                .addEventListener('restaurants:updated', () => {
+            document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
                     expect(document.querySelectorAll('.restaurant-item').length)
                         .toEqual(0);
                 done();

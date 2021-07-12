@@ -17,14 +17,26 @@
     .app-bar .app-bar_menu button{
         padding: 15px;
     }
+
+    picture img {
+        max-width: 100%;
+    }
+
+    .hero .hero_inner h1 {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 650px) {
     .app-bar .app-bar_brand h1 {
         font-size: 35px;
     }
-}
 
+    .hero .hero_inner h1 {
+        font-size: 25px;
+    }
+
+}
 
 @media screen and (min-width: 650px) {
     .app-bar {
@@ -78,11 +90,19 @@
         grid-column-start: 1;
         grid-column-end: 3;
     }
+
+    .hero .hero_inner h1 {
+        font-size: 25px;
+    }
   }
    
 @media screen and (min-width: 800px) {
     .app-bar .app-bar_brand h1 {
         font-size: 2em;
+    }
+
+    .hero .hero_inner h1 {
+        font-size: 30px;
     }
   }
 

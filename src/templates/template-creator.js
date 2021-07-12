@@ -8,7 +8,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <h4>Address : </h4><p>${restaurant.address} 
         <h4>City: ${restaurant.city} </h4>
         <h4>Rating: ${restaurant.rating} </h4>
-        <img class="restaurant_poster" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+        <picture> 
+            <img 
+                class="restaurant_poster" 
+                src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" 
+                alt="${restaurant.name}">
+            </img>
+        </picture>        
         <h4>Description</h4>
         <p>${restaurant.description}</p>
         <br>
@@ -39,8 +45,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item_header">
-        <img class="restaurant-item_header_poster" alt="${restaurant.name || '-'} "
-            src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+        <picture> 
+            <img 
+                class="restaurant-item_header_poster" 
+                src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+                alt="${restaurant.name || '-'}">                
+            </img>
+        </picture>       
     </div>
     <div class="restaurant-item_content">
         <h3 class="restaurant_title"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name || '-'}</a>
@@ -57,8 +68,13 @@ const createRestaurantItemTemplate = (restaurant) => `
 const createRestaurantItemFavoriteTemplate = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item_header">
-        <img class="restaurant-item_header_poster" alt="${restaurant.name}"
-            src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+        <picture>
+            <img 
+                class="restaurant-item_header_poster" 
+                src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}"
+                alt="${restaurant.name}">
+            </img>    
+        </picture>
     </div>
     <div class="restaurant-item_content">
         <h3>City: ${restaurant.city} </h3>

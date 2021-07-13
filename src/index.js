@@ -2,7 +2,7 @@ import 'regenerator-runtime'; /* for async await transpile */
 import './assets/styles/main.css';
 import './assets/styles/responsive.css';
 import swRegister from './scripts/utils/sw-register';
-import App from './scripts/view/App';
+import App from './scripts/view/app';
 import 'lazysizes'
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 

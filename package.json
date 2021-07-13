@@ -4,12 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "build-image": "node sharp.js",
-    "test": "karma start",
-    "lint": "eslint ./src",
-    "e2e": "codeceptjs run --steps"
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [],
   "author": "Aan Sumanto <aansoemanto0210@gmail.com>",
@@ -40,7 +35,6 @@
     "puppeteer": "^10.1.0",
     "sharp": "^0.28.3",
     "style-loader": "^1.2.1",
-    "webpack": "^4.44.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",
@@ -54,6 +48,7 @@
     "serviceworker-webpack-plugin": "^1.0.1"
   },
   "engines": {
-    "node":"13.14.0", "npm": "7.17.0" 
+    "node": "13.14.0",
+    "npm": "7.17.0"
   }
 }

@@ -3,9 +3,69 @@ import { createRestaurantItemTemplate } from '../../../../templates/template-cre
 class FavoriteRestaurantSearchView {
     getTemplate() {
         return `
-        <div class="content">
-            <input id="query" type="text">
-            <h2 class="content_heading">Your Favorite Restaurant</h2>
+        <style>
+            .search-container > input {
+                padding: 16px;
+                border: 0;
+                border-bottom: 1px solid black;
+                font-weight: bold;
+                background-color: #F7FD04;
+                align-content: center;
+            }
+
+            .search-container > input:focus {
+                outline: 0;
+                border-bottom: 2px solid black;
+            }
+
+            .search-container > input:focus::placeholder {
+                font-weight: bold;
+            }
+
+            .search-container >  input::placeholder {
+                color: cornflowerblue;
+                font-weight: normal;
+            }
+
+            .search-container > button {
+                width: 30%;
+                cursor: pointer;
+                margin-left: auto;
+                padding: 15px;
+                width: auto;
+                background-color: cornflowerblue;
+                color: white;
+                border: 0;
+                text-transform: uppercase;
+            }
+
+            @media screen and (max-width: 550px){
+                .search-container {
+                    flex-direction: column;
+                    position: static;
+                }
+
+                .search-container > input {
+                    width: 100%;
+                    margin-bottom: 12px;
+                }
+
+                .search-container input::placeholder  {
+                    width: 50%;
+                    font-size:15px
+                }
+
+                .search-container > button {
+                    width: 100%;
+                }
+            }
+
+            </style>
+
+        <div id="search-container" class="content search-container">
+            <input placeholder="Search Favorite Restaurant" id="query" type="search">
+            <button id="searchButtonElement" type="submit">Search</button>
+
             <div id="restaurants" class="restaurants">
             </div>
         </div>

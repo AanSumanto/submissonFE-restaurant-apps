@@ -25,6 +25,9 @@ module.exports = {
           {
             loader: 'css-loader',
           },
+          {
+            resolve: ['.js', '.jsx', '.css'],
+          },
         ],
       },
       {
@@ -32,6 +35,9 @@ module.exports = {
             use: [
                 {
                loader: 'file-loader',
+                },
+                {
+                  resolve: ['.woff', '.woff2', '.eot', '.ttf', '.otf'],
                 },
             ],
           },

@@ -35,6 +35,7 @@
     "puppeteer": "^10.1.0",
     "sharp": "^0.28.3",
     "style-loader": "^1.2.1",
+    "webpack": "^4.44.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.2",

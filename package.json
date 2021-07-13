@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   },
   "keywords": [],
   "author": "Aan Sumanto <aansoemanto0210@gmail.com>",
